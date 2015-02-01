@@ -14,9 +14,6 @@ spacer:set_image(beautiful.icons .. "/widgets/spacer.png")
 local spacer2 = wibox.widget.textbox(" | ")
 
 
--- Clock
-textclock = awful.widget.textclock()
-
 -- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
@@ -69,7 +66,6 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(volume.widget())
     right_layout:add(battery.widget())
-    right_layout:add(textclock)
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
