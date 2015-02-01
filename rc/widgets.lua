@@ -1,7 +1,7 @@
 local wibox   = require("wibox")
 local vicious = require("vicious")
 local volume  = loadrc("volume", "jweslley/volume")
-local battery = loadrc("battery", "jweslley/battery")
+--local battery = loadrc("battery", "jweslley/battery")
 local helpers = loadrc("helpers", "jweslley/helpers")
 
 -- Separators
@@ -65,7 +65,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(volume.widget())
-    right_layout:add(battery.widget())
+    --right_layout:add(battery.widget())
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
