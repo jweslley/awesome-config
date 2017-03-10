@@ -7,26 +7,25 @@ awful.rules.rules = {
       border_color = beautiful.border_normal,
       focus = awful.client.focus.filter,
       keys = config.keys.client,
-      buttons = config.mouse.client
+      buttons = config.buttons.client,
+      screen = awful.screen.preferred,
+      placement = awful.placement.no_overlap+awful.placement.no_offscreen
     }
   },
   {
     rule = { class = "URxvt" },
-    properties = {
-      tag = tags[screen.count()][1]
-    }
+    properties = { tag = "term" }
   },
   {
     rule_any = { class = { "Chromium", "Firefox" } },
-    properties = {
-      tag = tags[screen.count()][2]
-    }
+    properties = { tag = "web" }
+  },
+  {
+    rule_any = { role = { "pop-up" } },
+    properties = { tag = "web", floating = true }
   },
   {
     rule = { class = "Vlc" },
-    properties = {
-      floating = true,
-      tag = tags[screen.count()][3]
-    }
+    properties = { tag = "media" }
   }
 }

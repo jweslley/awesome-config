@@ -3,7 +3,6 @@ theme = {}
 theme.font          = "Ubuntu 10"
 theme.icons         = awful.util.getdir("config") .. "/icons"
 --theme.wallpaper     = "/home/jweslley/.wallpaper.png"
-theme.icon_theme    = "/usr/share/icons/Faenza"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"

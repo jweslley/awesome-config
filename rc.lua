@@ -19,9 +19,10 @@ function loadrc(name, mod)
   -- Execute the RC/module file
   success, result = pcall(function() return dofile(path) end)
   if not success then
-    naughty.notify({ preset = naughty.config.presets.critical,
-      title = "Error while loading an RC file",
-      text = "When loading `" .. name .. "`, got the following error:\n" .. result
+    naughty.notify({
+      preset = naughty.config.presets.critical,
+      title  = "Error while loading an RC file",
+      text   = "When loading `" .. name .. "`, got the following error:\n" .. result
     })
 
     return print("E: error loading RC file '" .. name .. "': " .. result)
@@ -42,14 +43,14 @@ loadrc("errors")
 modkey = "Mod4"
 
 config = {}
-config.keys = {}
-config.mouse = {}
-config.terminal  = "urxvt"
-config.term_cmd  = config.terminal .. " -e "
-config.hostname  = awful.util.pread('uname -n'):gsub('\n', '')
-config.editor    = os.getenv("EDITOR") or "vim"
-config.browser   = os.getenv("BROWSER") or "chromium"
-config.layouts   = {
+config.keys        = {}
+config.keys.global = {}
+config.buttons     = {}
+config.terminal    = "urxvt"
+config.term_cmd    = config.terminal .. " -e "
+config.editor      = os.getenv("EDITOR") or "vim"
+config.browser     = os.getenv("BROWSER") or "chromium"
+config.layouts     = {
   awful.layout.suit.tile,        -- 1
   awful.layout.suit.tile.bottom, -- 2
   awful.layout.suit.fair,        -- 3
@@ -58,11 +59,11 @@ config.layouts   = {
   awful.layout.suit.floating     -- 6
 }
 
-loadrc("appearance")
-loadrc("bindings")
-loadrc("signals")
-loadrc("tags")
-loadrc("rules")
-loadrc("widgets")
 
-root.keys(config.keys.global)
+loadrc("appearance")
+loadrc("wibar")
+loadrc("tags")
+loadrc("bindings")
+loadrc("rules")
+loadrc("signals")
+
