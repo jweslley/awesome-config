@@ -6,7 +6,7 @@ theme.icons         = awful.util.getdir("config") .. "/icons"
 
 theme.bg_normal     = "#1A1A1A"
 theme.bg_focus      = "#313131"
-theme.bg_urgent     = "#b94a48"
+theme.bg_urgent     = "#1A1A1A"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#666666"
