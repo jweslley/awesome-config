@@ -4,21 +4,21 @@ theme.font          = "Ubuntu 10"
 theme.icons         = awful.util.getdir("config") .. "/icons"
 --theme.wallpaper     = "/home/jweslley/.wallpaper.png"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
+theme.bg_normal     = "#1A1A1A"
+theme.bg_focus      = "#313131"
 theme.bg_urgent     = "#b94a48"
-theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
+theme.fg_normal     = "#666666"
 theme.fg_focus      = "#cccccc"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_urgent     = "#ff5733"
 
 theme.border_width  = 1
-theme.border_normal = "#000000"
+theme.border_normal = theme.bg_normal
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
+
+theme.tasklist_bg_focus = theme.bg_normal
 
 -- Widgets
 --theme.bg_widget = "#cc0000"
